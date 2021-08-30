@@ -1,16 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-public class ClickEvent : MonoBehaviour, IPointerClickHandler
+public class UnitClicked : MonoBehaviour, IPointerClickHandler
 {
-    [SerializeField] public UnityEvent _onClick;
+    [SerializeField] public Unit _me;
     [SerializeField] private bool _debug;
+    private void Start()
+    {
+        _me = gameObject.GetComponent<Unit>();
+    }
     public void OnPointerClick(PointerEventData eventData)
-    {        
-        _onClick.Invoke();
+    {
+        GameEvents.events.UnitClicked(_me);
         if (_debug)
         {
             LogDebug();
@@ -19,9 +22,5 @@ public class ClickEvent : MonoBehaviour, IPointerClickHandler
     private void LogDebug()
     {
         Debug.Log($"Clicked on: {gameObject.name}");
-    }
-    public void SetEvent(UnityAction ua)
-    {
-        _onClick.AddListener(ua);
     }
 }

@@ -253,7 +253,6 @@ GameObject:
   - component: {fileID: 8046029456676916578}
   - component: {fileID: 8046029456676916581}
   - component: {fileID: 8046029456676916580}
-  - component: {fileID: 8046029456676916583}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -349,35 +348,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
---- !u!114 &8046029456676916583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8046029456676916579}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7675ea70ad53eb54dad742b3cc8b1fad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _onClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  _debug: 0
 --- !u!1 &8046029456826859268
 GameObject:
   m_ObjectHideFlags: 0
@@ -725,6 +695,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8046029457324204839}
   - component: {fileID: 8046029457324204838}
+  - component: {fileID: 1303522940923215834}
+  - component: {fileID: 425738875996880306}
   m_Layer: 0
   m_Name: Riot
   m_TagString: Untagged
@@ -761,6 +733,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthBar: {fileID: 8046029456500759673}
+  _name: Riot Trooper
   _description: 
   _hitPointController:
     _health: 50
@@ -792,6 +765,46 @@ MonoBehaviour:
     _cooldown: 0
     _sprite: 
     _checkLOS: 0
+--- !u!61 &1303522940923215834
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8046029457324204836}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &425738875996880306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8046029457324204836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a5440fa54973044adea913bc7a7e63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _me: {fileID: 0}
+  _debug: 1
 --- !u!1 &8046029457573289908
 GameObject:
   m_ObjectHideFlags: 0

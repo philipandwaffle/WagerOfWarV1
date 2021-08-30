@@ -39,7 +39,7 @@ class Board : MonoBehaviour
                 if (board[x][y] != null)
                 {
                     board[x][y] = Instantiate(board[x][y]);
-                    board[x][y].transform.Find("Sprite").GetComponent<ClickEvent>()._onClick.AddListener(delegate { _ui.SetCurrentUnit(board[x][y].GetComponent<Unit>()); });
+                    board[x][y].transform.SetParent(this.gameObject.transform);
                     board[x][y].transform.position = new Vector3(x * _spacing, y * _spacing, 0);
                     board[x][y].name = $"{x},{y}:\t{board[x][y].GetComponent<Unit>()._name}";
                 }

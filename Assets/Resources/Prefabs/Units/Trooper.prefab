@@ -90,7 +90,6 @@ GameObject:
   - component: {fileID: 1417637394525735422}
   - component: {fileID: 1417637394525735417}
   - component: {fileID: 1417637394525735416}
-  - component: {fileID: 1417637394525735419}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -186,35 +185,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
---- !u!114 &1417637394525735419
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1417637394525735423}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7675ea70ad53eb54dad742b3cc8b1fad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _onClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: SetCurrentUnit
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1417637394922448826}
-          m_ObjectArgumentAssemblyTypeName: Unit, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  _debug: 0
 --- !u!1 &1417637394836286401
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,7 +373,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1417637394922448827}
-  - component: {fileID: 1417637394922448826}
+  - component: {fileID: 8695197540280270948}
+  - component: {fileID: 4053720840562307869}
+  - component: {fileID: 6311882040815351841}
   m_Layer: 0
   m_Name: Trooper
   m_TagString: Untagged
@@ -427,7 +399,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1417637394922448826
+--- !u!114 &8695197540280270948
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -440,37 +412,78 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthBar: {fileID: 1417637396513839333}
-  _description: 
+  _name: Trooper
+  _description: Your standard unit
   _hitPointController:
     _health: 100
-    _armour: 25
+    _armour: 50
     _modifier: 0.25
     _isDead: 0
   _attacks:
-  - _name: Rifle Shot
-    _description: This is a test 1
-    _damage: 75
+  - _name: Rifle shot
+    _description: Single shot rifle round
+    _damage: 50
     _type: 0
-    _range: 0
+    _range: 1
     _cooldown: 1
     _sprite: 
     _checkLOS: 0
   - _name: Grenade
-    _description: This is a test 2
-    _damage: 25
+    _description: Lob a nade that ignores LOS
+    _damage: 50
+    _type: 0
+    _range: 1
+    _cooldown: 3
+    _sprite: 
+    _checkLOS: 0
+  - _name: n/a
+    _description: n/a
+    _damage: 0
     _type: 0
     _range: 0
     _cooldown: 0
     _sprite: 
     _checkLOS: 0
-  - _name: Attack3
-    _description: This is a test 3
-    _damage: 25
-    _type: 0
-    _range: 0
-    _cooldown: 0
-    _sprite: 
-    _checkLOS: 0
+--- !u!61 &4053720840562307869
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417637394922448824}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &6311882040815351841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417637394922448824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a5440fa54973044adea913bc7a7e63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _me: {fileID: 0}
+  _debug: 1
 --- !u!1 &1417637395076806928
 GameObject:
   m_ObjectHideFlags: 0

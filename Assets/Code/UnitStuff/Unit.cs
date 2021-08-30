@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class Unit : MonoBehaviour
 {
     [SerializeField] HealthBarController _healthBar;
-    [SerializeField] public string _name { get; set; }
+    [SerializeField] public string _name;
     [SerializeField] public string _description;
     [SerializeField] public HitPointController _hitPointController;
     [SerializeField] public Attack[] _attacks;
