@@ -13,10 +13,13 @@ public class UnitClicked : MonoBehaviour, IPointerClickHandler
     }
     public void OnPointerClick(PointerEventData eventData)
     {
-        GameEvents.events.UnitClicked(_me);
-        if (_debug)
+        if (eventData.button == PointerEventData.InputButton.Left)
         {
-            LogDebug();
+            GameEvents.events.UnitClicked(_me);
+            if (_debug)
+            {
+                LogDebug();
+            }
         }
     }
     private void LogDebug()
