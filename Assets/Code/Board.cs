@@ -8,7 +8,6 @@ class Board : MonoBehaviour
     public List<List<GameObject>> _team1;
     public List<List<GameObject>> _team2;
     [SerializeField] public float _spacing;
-    [SerializeField] UIController _ui;
 
     private bool _isTeam1Turn = true;
     private Unit _selectedUnit;
@@ -37,14 +36,19 @@ class Board : MonoBehaviour
             for (int y = 0; y < board[x].Count; y++)
             {
                 if (board[x][y] != null)
-                {
+                {                    
                     board[x][y] = Instantiate(board[x][y]);
-                    board[x][y].transform.SetParent(this.gameObject.transform);
-                    board[x][y].transform.position = new Vector3(x * _spacing, y * _spacing, 0);
-                    board[x][y].name = $"{x},{y}:\t{board[x][y].GetComponent<Unit>()._name}";
+                    SetUpUnit(board[x][y], x, y);                    
                 }
             }
         }
+    }
+    private void SetUpUnit(GameObject g, int x, int y)
+    {
+        g.transform.SetParent(gameObject.transform);
+        g.transform.position = new Vector3(x * _spacing, y * _spacing, 0);
+        g.name = $"{x},{y}:\t{g.GetComponent<Unit>()._name}";
+        g.GetComponent<SpriteController>().SetFlipX(x >= _team1.Count);
     }
 
     public void SetSelected(Unit u)

@@ -15,6 +15,7 @@ public class Unit : MonoBehaviour
     private void Start()
     {
         _healthBar.InitBar(_hitPointController._health, _hitPointController._armour);
+
     }
 
     public void Damage(float damage)
