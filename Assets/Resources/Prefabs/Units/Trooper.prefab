@@ -171,6 +171,7 @@ GameObject:
   - component: {fileID: 6656205351337598848}
   - component: {fileID: 3712775229885322428}
   - component: {fileID: 6709185879302191400}
+  - component: {fileID: -4844503028149239265}
   m_Layer: 0
   m_Name: Trooper
   m_TagString: Untagged
@@ -221,7 +222,7 @@ MonoBehaviour:
     _type: 0
     _range: 1
     _cooldown: 1
-    _sprite: 
+    _sprite: Sprites/Trooper/RifleIcon
     _checkLOS: 0
   - _name: Grenade
     _description: Lob a nade that ignores LOS
@@ -229,7 +230,7 @@ MonoBehaviour:
     _type: 0
     _range: 1
     _cooldown: 3
-    _sprite: 
+    _sprite: Sprites/Trooper/GrenadeIcon
     _checkLOS: 0
   - _name: n/a
     _description: n/a
@@ -294,6 +295,18 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 8625052528324388196}
   _path: Sprites/Trooper/1
   _flipX: 0
+--- !u!114 &-4844503028149239265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8625052527897987877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c0e118309978ac468b7848ef8b31a38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8625052527986700129
 GameObject:
   m_ObjectHideFlags: 0

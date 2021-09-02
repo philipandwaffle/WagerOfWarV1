@@ -18,9 +18,9 @@ public class Unit : MonoBehaviour
 
     }
 
-    public void Damage(float damage)
+    public void Damage(Attack a)
     {
-        _hitPointController.damage(damage);
+        _hitPointController.damage(a._damage);
         _healthBar.UpdateBar(_hitPointController._health, _hitPointController._armour);
     }
 }

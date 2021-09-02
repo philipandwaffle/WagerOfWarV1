@@ -671,6 +671,7 @@ GameObject:
   - component: {fileID: 1303522940923215834}
   - component: {fileID: 425738875996880306}
   - component: {fileID: 2615129697677794999}
+  - component: {fileID: -2855859165037209831}
   m_Layer: 0
   m_Name: Riot
   m_TagString: Untagged
@@ -794,6 +795,18 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 8046029456676916581}
   _path: Sprites/RiotTrooper/1
   _flipX: 0
+--- !u!114 &-2855859165037209831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8046029457324204836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c0e118309978ac468b7848ef8b31a38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8046029457573289908
 GameObject:
   m_ObjectHideFlags: 0
