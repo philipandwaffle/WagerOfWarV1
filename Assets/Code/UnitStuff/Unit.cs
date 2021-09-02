@@ -20,7 +20,7 @@ public class Unit : MonoBehaviour
 
     public void Damage(Attack a)
     {
-        if (_hitPointController.damage(a._damage)) { Destroy(gameObject); }
+        if (_hitPointController.Damage(a._damage)) { Destroy(gameObject); }
         _healthBar.UpdateBar(_hitPointController._health, _hitPointController._armour);
         
     }

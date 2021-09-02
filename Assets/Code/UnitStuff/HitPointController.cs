@@ -17,28 +17,29 @@ public class HitPointController
         this._modifier = modifier;
     }
 
-    public bool damage(float damage)
+    public bool Damage(float damage)
     {
-        float d = damage;   //damage stored
+        _health -= DamageArmour(damage);
+        _isDead = _health < 0; 
+        if (_isDead) { _health = 0; }
 
-        //unit has armour           
-        if (_armour > 0)
-        {
-            float newDmg = (1 - _modifier) * damage;  //apply damage to armour
-            _armour -= newDmg;
-            damage -= newDmg;
-            if (_armour < 0)
-            {
-                d = -_armour;    //negative armour it turned into carry over damage
-                _armour = 0;     //armour is set to 0 so that armor is no longer applied
-            }
-        }
-        _health -= d;        //apply damage to health
-        _isDead = _health <= 0; //if the health is 0 or less then unit is dead
-        if (_isDead)
-        {
-            _health = 0;
-        }
         return _isDead;        //returns if the health is 0
+    }
+
+    private float DamageArmour(float d)
+    {
+        if (_armour == 0 ) { return d; }
+        float effectiveHealth = _armour * (1 + _modifier);
+        if (effectiveHealth > d) 
+        { 
+            _armour -= d * (1 - _modifier);
+            return 0;
+        }
+        else
+        {
+            float carryOver = effectiveHealth - d;
+            _armour = 0;
+            return carryOver;
+        }
     }
 }
