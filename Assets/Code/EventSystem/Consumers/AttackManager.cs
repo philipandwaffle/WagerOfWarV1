@@ -29,15 +29,27 @@ public class AttackManager : MonoBehaviour
     }
     public void PerformAttack()
     {
-        _targetUnit.Damage(_selectedAttack);
+        if (_selectedAttack != null && _targetUnit != null)
+        {
+            _targetUnit.Damage(_selectedAttack);
+            Clear();
+        }
     }
     private void UpdateText()
     {
         string s = "";
         string attackName = _selectedAttack != null ? _selectedAttack._name : "Not selected";
         string unitName = _targetUnit != null ? _targetUnit.name : "Not selected";
+        s += $"Current Team: {GameController._currentTeam}\n";
         s += $"Selected Attack: {attackName}\n";
         s += $"Target Unit: {unitName}\n";
         _text.text = s;
+    }
+
+    private void Clear()
+    {
+        _targetUnit = null;
+        _selectedAttack = null;
+        UpdateText();
     }
 }

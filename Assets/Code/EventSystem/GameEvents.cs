@@ -12,10 +12,10 @@ public class GameEvents : MonoBehaviour
         events = this;    
     }
 
-    public event Action<Unit> _onUnitClick;
-    public void UnitClicked(Unit u)
+    public event Action<Unit> _setUnitAttacks;
+    public void SetUnitAttacks(Unit u)
     {
-        _onUnitClick?.Invoke(u);
+        _setUnitAttacks?.Invoke(u);
     }
 
     public event Action<Attack> _setSelectedAttack;
@@ -35,4 +35,11 @@ public class GameEvents : MonoBehaviour
     {
         _performAttack?.Invoke();
     }
+
+    public event Action _nextPlayer;
+    public void NextPlayer()
+    {
+        _nextPlayer?.Invoke();
+    }
+
 }

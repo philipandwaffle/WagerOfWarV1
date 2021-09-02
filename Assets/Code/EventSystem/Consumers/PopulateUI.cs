@@ -7,6 +7,6 @@ public class PopulateUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameEvents.events._onUnitClick += this.gameObject.GetComponent<UIController>().SetCurrentUnit;
+        GameEvents.events._setUnitAttacks += this.gameObject.GetComponent<UIController>().SetCurrentUnit;
     }
 }

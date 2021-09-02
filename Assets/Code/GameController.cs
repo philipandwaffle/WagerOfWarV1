@@ -9,8 +9,12 @@ class GameController : MonoBehaviour
     [SerializeField] public GameObject riot;
     [SerializeField] public GameObject trooper;
 
+    [SerializeField] public static int _currentTeam;
+
     public void Start()
     {
+        _currentTeam = 1;
+        GameEvents.events._nextPlayer += NextPlayer;
         List<GameObject> riotCol = new List<GameObject> { riot, riot, riot, riot };
         List<GameObject> trooperCol = new List<GameObject> { trooper, trooper, trooper, trooper };
         List<GameObject> nullCol = new List<GameObject> { null, null, null, null };
@@ -19,5 +23,10 @@ class GameController : MonoBehaviour
 
         _board.PopulateBoard(team,team);
         _board.PlaceUnits();
+    }
+
+    private void NextPlayer()
+    {
+        _currentTeam = _currentTeam == 1 ? 2 : 1;
     }
 }

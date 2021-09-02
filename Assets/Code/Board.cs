@@ -49,6 +49,7 @@ class Board : MonoBehaviour
         g.transform.position = new Vector3(x * _spacing, y * _spacing, 0);
         g.name = $"{x},{y}:\t{g.GetComponent<Unit>()._name}";
         g.GetComponent<SpriteController>().SetFlipX(x >= _team1.Count);
+        g.GetComponent<Unit>()._team = x >= _team1.Count ? 2 : 1;
     }
 
     public void SetSelected(Unit u)

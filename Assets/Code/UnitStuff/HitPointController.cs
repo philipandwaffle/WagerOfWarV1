@@ -24,7 +24,9 @@ public class HitPointController
         //unit has armour           
         if (_armour > 0)
         {
-            _armour -= (1 - _modifier) * damage;  //apply damage to armour
+            float newDmg = (1 - _modifier) * damage;  //apply damage to armour
+            _armour -= newDmg;
+            damage -= newDmg;
             if (_armour < 0)
             {
                 d = -_armour;    //negative armour it turned into carry over damage

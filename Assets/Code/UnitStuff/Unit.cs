@@ -11,16 +11,17 @@ public class Unit : MonoBehaviour
     [SerializeField] public string _description;
     [SerializeField] public HitPointController _hitPointController;
     [SerializeField] public Attack[] _attacks;
+    public int _team;
 
     private void Start()
     {
         _healthBar.InitBar(_hitPointController._health, _hitPointController._armour);
-
     }
 
     public void Damage(Attack a)
     {
-        _hitPointController.damage(a._damage);
+        if (_hitPointController.damage(a._damage)) { Destroy(gameObject); }
         _healthBar.UpdateBar(_hitPointController._health, _hitPointController._armour);
+        
     }
 }
